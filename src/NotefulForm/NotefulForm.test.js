@@ -1,22 +1,14 @@
-import React from 'react';
-import { shallow } from 'enzyme'
-import toJson from 'enzyme-to-json'
-import NotefulForm from './NotefulForm'
-
-describe(`NotefulForm component`, () => {
-  const props = {
-    className: 'test-class-name',
-    children: <p>test children</p>,
-    'data-other': 'test-other-prop'
-  }
-
-  it('renders a form.NotefulForm by default', () => {
-    const wrapper = shallow(<NotefulForm />)
-    expect(toJson(wrapper)).toMatchSnapshot()
-  })
-
-  it('renders the NotefulForm given props', () => {
-    const wrapper = shallow(<NotefulForm {...props} />)
-    expect(toJson(wrapper)).toMatchSnapshot()
-  })
-})
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import NotefulForm from "./NotefulForm";
+it("renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(
+    <BrowserRouter>
+      <NotefulForm />
+    </BrowserRouter>,
+    div
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});
