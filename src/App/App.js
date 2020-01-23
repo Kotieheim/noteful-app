@@ -11,6 +11,7 @@ import AddNote from "../AddNote/AddNote";
 import NotefulError from "../NotefulError/NotefulError";
 import { findNote, findFolder } from "../notes-helpers";
 import "./App.css";
+import config from "../config";
 
 class App extends Component {
   state = {
@@ -18,8 +19,8 @@ class App extends Component {
     folders: [],
     err: null
   };
-  FolderUrl = "http://localhost:8080/api/folders";
-  NoteUrl = "http://localhost:8080/api/notes";
+  FolderUrl = `${config.API_ENDPOINT}/folders`;
+  NoteUrl = `${config.API_ENDPOINT}/notes`;
 
   componentDidMount() {
     fetch(this.FolderUrl)
@@ -156,7 +157,6 @@ class App extends Component {
     );
   }
   render() {
-    console.log(this.state);
     return (
       <NoteContext.Provider
         value={{

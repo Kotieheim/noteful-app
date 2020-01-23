@@ -23,7 +23,6 @@ export default class NoteListMain extends Component {
                 name={note.name}
                 modified={note.modified}
               />
-              {console.log(note)}
             </li>
           ))}
         </ul>

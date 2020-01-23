@@ -22,7 +22,7 @@ export default function NoteListNav() {
                   <span className="NoteListNav__num-notes">
                     {countNotesForFolder(notes, folder.id)}
                   </span>
-                  {console.log(notes, folders)}
+
                   {folder.name}
                 </NavLink>
               </li>
